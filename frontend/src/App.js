@@ -10,6 +10,9 @@ const App = () => {
 
   const theme = createTheme(
     {
+      typography: {
+        fontFamily: "inter",
+      },
       scrollbarStyles: {
         "&::-webkit-scrollbar": {
           width: "8px",
@@ -21,7 +24,7 @@ const App = () => {
         },
       },
       palette: {
-        primary: { main: "#2576d2" },
+        primary: { main: "#0096FF" },
       },
     },
     locale

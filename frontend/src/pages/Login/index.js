@@ -2,20 +2,18 @@ import React, { useState, useContext } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import {
-  Avatar,
   Button,
   CssBaseline,
   TextField,
   Grid,
   Box,
-  Typography,
   Container,
   InputAdornment,
   IconButton,
-  Link
-} from '@material-ui/core';
+  Link,
+} from "@material-ui/core";
 
-import { LockOutlined, Visibility, VisibilityOff } from '@material-ui/icons';
+import { Visibility, VisibilityOff } from "@material-ui/icons";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -77,12 +75,8 @@ const Login = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlined />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          {i18n.t("login.title")}
-        </Typography>
+        <img src="/logo.png" alt="logoWhaticket" width={"300px"} />
+
         <form className={classes.form} noValidate onSubmit={handlSubmit}>
           <TextField
             variant="outlined"
@@ -108,7 +102,7 @@ const Login = () => {
             value={user.password}
             onChange={handleChangeInput}
             autoComplete="current-password"
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -119,7 +113,7 @@ const Login = () => {
                     {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
-              )
+              ),
             }}
           />
           <Button

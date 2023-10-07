@@ -13,10 +13,9 @@ import {
   IconButton,
   Menu,
 } from "@material-ui/core";
-
+import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 
 import MainListItems from "./MainListItems";
 import NotificationsPopOver from "../components/NotificationsPopOver";
@@ -177,6 +176,7 @@ const LoggedInLayout = ({ children }) => {
         open={drawerOpen}
       >
         <div className={classes.toolbarIcon}>
+          <img src="logo.png" alt="logo" width={"120px"} height={"30px"} />
           <IconButton onClick={() => setDrawerOpen(!drawerOpen)}>
             <ChevronLeftIcon />
           </IconButton>
@@ -195,7 +195,7 @@ const LoggedInLayout = ({ children }) => {
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, drawerOpen && classes.appBarShift)}
-        color={process.env.NODE_ENV === "development" ? "inherit" : "primary"}
+        color={process.env.NODE_ENV === "development" ? "inherit" : "inherit"}
       >
         <Toolbar variant="dense" className={classes.toolbar}>
           <IconButton
@@ -214,10 +214,9 @@ const LoggedInLayout = ({ children }) => {
             component="h1"
             variant="h6"
             color="inherit"
-            noWrap
             className={classes.title}
           >
-            WhaTicket
+            Olá <b>{user.name}</b>, Bem vindo ao Whaticket!
           </Typography>
           {user.id && <NotificationsPopOver />}
 
